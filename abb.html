@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<title>
+		Build a Survey Form using HTML and CSS
+	</title>
+
+</head>
+
+<body>
+	<h1 >Testing  Report ABB </h1>
+
+	<!-- Create Form -->
+	<form method="post" name="google-sheet">
+
+    
+		<!-- Details -->
+		<div class="form-control">
+			<label for="name" id="label-name" >
+				Board Details
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="name"
+        name="Board Details"/>
+
+		</div>
+
+		<!-- Details -->
+		<div class="form-control">
+			<label for="name" id="label-name" >
+				Description
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="name"
+				placeholder="Enter Description" 
+        name="Description"/>
+		</div>
+
+
+		<div class="form-control">
+			<label for="age" id="label-age">
+				Section Code
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="age"
+        name="Section Code"
+				/>
+		</div>
+
+
+		<div class="form-control">
+			<label for="c-code" id="label-age">
+				Category Code
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="c-code"
+        name="Category Code"
+				/>
+		</div>
+
+		<div class="form-control">
+			<label for="date" id="label-age">
+				Date
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="date"
+				id="date"
+        name="Date"
+				/>
+		</div>
+
+
+		
+
+		<!-- Multi-line Text Input Control -->
+		<button type="submit" value="submit" >
+			Submit
+		</button>
+	</form>
+
+
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzmOXA1dpjcWnsIdBxdBWGwJEYN1zRRnq33VjHOjCIwN_lGFNrprLh04ol-NFXvnjKj/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+
+
+  </script>
+
+
+
+</body>
+
+</html>
